@@ -1,0 +1,99 @@
+@import './variables.sass'
+@import './toggler.sass'
+@import './animations.sass'
+@import './translate.sass'
+@import './sidebar.sass'
+
+.top-page
+  width: 100vw
+  height: 100vh
+  background: $mainBlack
+  animation: topPageDown 1s alternate 1 0.5s cubic-bezier(0, 0, 0.29, 1) both
+  position: relative
+
+.top-menu
+  height: 6rem
+  .content
+    padding-top: 1rem
+    width: 90%
+    height: 80%
+
+//mouse-scroll
+
+.mouse-scroll
+  cursor: pointer
+  width: 4rem
+  height: 7rem
+  position: absolute
+  left: 50%
+  bottom: 5%
+  transform: translateX(-50%)
+  animation: topPageDownShowMouse 1s alternate 0.5s 1 linear both
+  flex-direction: column
+
+.mouse
+  width: 35%
+  height: 40%
+  border: 2px solid $mainWhite
+  border-radius: 2rem
+  position: relative
+  .wheel
+    position: absolute
+    width: 4px
+    height: 4px
+    background: $mainWhite
+    border-radius: 50%
+    left: 50%
+    top: 20%
+    transform: translate(-50%, -50%)
+    animation: wheelUpDown 1s alternate infinite linear
+
+//arrows
+
+.arrows > span
+  display: block
+  transform: rotate(45deg)
+  border-right: 2px solid white
+  border-bottom: 2px solid white
+  width: 16px
+  height: 16px
+  margin: 4px 0 -6px 0px
+  animation: arrows 1s alternate infinite linear
+  &:nth-child(2)
+    animation-delay: .2s
+  &:nth-child(3)
+    animation-delay: .4s
+
+//typing
+
+.type-container
+  position: absolute
+  left: 50%
+  top: 50%
+  transform: translate(-50%, -50%)
+  color: $mainWhite
+  animation: showTyper 1s ease 1s 1 alternate both
+
+.type-word
+  color: #fff
+  font-family: 'Montserrat', sans-serif
+  white-space: nowrap
+  position: absolute
+  left: 50%
+  transform: translateX(-50%)
+
+.type-word2
+  border-right: 0.1em solid white
+  display: inline-flex
+  width: 14ch
+  white-space: nowrap
+  overflow: hidden
+  animation: typing 2s 1s steps(12, end), blink-caret 0.5s 1s step-end infinite alternate
+
+@media screen and (max-width: 620px)
+  .type-word
+    white-space: initial
+
+@media screen and (max-width: 720px)
+  .translate-hide ul
+    display: none

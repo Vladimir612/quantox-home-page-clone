@@ -1,0 +1,45 @@
+@import './variables.sass'
+
+@keyframes topPageDown
+  0%
+    height: 15vh
+  100%
+    height: 100vh
+
+@keyframes topPageDownShowMouse
+  0%
+    opacity: 0
+  100%
+    opacity: 1
+
+@keyframes wheelUpDown
+  0%
+    transform: translate(-50%, -3px)
+  50%
+    transform: translate(-50%, 0)
+  100%
+    transform: translate(-50%, -3px)
+
+@keyframes arrows
+  0%
+    border-color: $mainWhite
+  50%
+    border-color: darken($mainWhite, 70%)
+  100%
+    border-color: $mainWhite
+
+//typer
+
+@keyframes typing
+  from
+    width: 0
+
+@keyframes blink-caret
+  50%
+    border-color: transparent
+
+@keyframes showTyper
+  0%
+    opacity: 0
+  100%
+    opacity: 1

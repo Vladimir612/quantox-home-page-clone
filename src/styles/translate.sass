@@ -1,0 +1,23 @@
+.translate
+  position: relative
+  ul
+    list-style: none
+    display: flex
+    padding: 0
+
+.translate ul li
+  padding: 5px
+  letter-spacing: 1px
+  color: white
+  cursor: pointer
+  &::after
+    display: inline-block
+    content: '|'
+    padding-left: 5px
+    color: gray
+    font-size: 1.6rem
+  &:nth-last-child(1)::after
+    opacity: 0
+    padding-right: 0px
+  &:nth-child(1)
+    color: darken($mainWhite, 30)
