@@ -1,0 +1,80 @@
+@import './variables.sass'
+
+.about-company
+  min-height: 100vh
+  position: relative
+  margin-left: auto
+  margin-right: auto
+  display: grid
+  grid-template-columns: 1fr 4fr
+  &::before
+    content: 'WHY'
+    position: absolute
+    top: 0px
+    padding-left: 1rem
+    text-transform: uppercase
+    color: rgba(0, 0, 0, 0.1)
+    font-weight: bold
+    overflow: hidden
+    font-size: 20rem
+    line-height: 14rem
+    margin-left: 0
+
+.move-right
+  grid-column: 2/3
+  padding-left: 2rem
+  .title
+    margin: 4rem 0 5rem 0
+    &::before
+      content: ''
+      display: block
+      width: 4rem
+      height: 2px
+      background: lighten($mainGreen, 20)
+      margin-bottom: 1rem
+    h2
+      font-size: 1.7rem
+      font-weight: bold
+      text-transform: uppercase
+
+.home-list
+  list-style: none
+  display: grid
+  grid-template-columns: repeat(3, 1fr)
+  grid-gap: 1.5rem
+  .home-list-element
+    padding: 4rem 1rem 2rem 0rem
+    font-weight: 400
+    line-height: 24px
+    font-size: 16px
+    position: relative
+    &::before
+      content: attr(data-num)
+      opacity: 0.09
+      color: $mainBlack
+      font-size: 200px
+      line-height: 200px
+      z-index: 9
+      position: absolute
+      top: 0px
+
+@media screen and (max-width: 1300px)
+  .about-company::before
+    font-size: 15rem
+    line-height: 10rem
+  .home-list
+    grid-template-columns: repeat(2, 1fr)
+
+@media screen and (max-width: 700px)
+  .about-company::before
+    font-size: 6rem
+    line-height: 5rem
+    padding-left: 0
+  .home-list
+    grid-template-columns: 1fr
+
+@media screen and (max-width: 1000px)
+  .about-company
+    grid-template-columns: 1fr
+  .move-right
+    grid-column: 1/2

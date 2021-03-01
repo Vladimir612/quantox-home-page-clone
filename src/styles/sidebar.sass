@@ -1,3 +1,5 @@
+@import './variables.sass'
+
 .sidebar
   display: none
   z-index: 200
@@ -6,7 +8,7 @@
   position: fixed
   top: 0
   left: -100vw
-  background-color: #000
+  background-color: $mainBlack
   display: flex
   flex-direction: column
   align-items: center
@@ -27,7 +29,7 @@
   font-size: 1rem
   position: relative
   text-transform: uppercase
-  color: #fff
+  color: $mainWhite
   &:hover::before
     width: 100%
   &::before
@@ -35,7 +37,7 @@
     position: absolute
     top: 0
     left: 0
-    color: #7ec729
+    color: $mainGreen
     width: 0
     overflow: hidden
     white-space: nowrap
@@ -45,9 +47,9 @@
   width: 100%
   display: flex
   justify-content: space-between
-  border-top: 2px solid #fff
+  border-top: 2px solid $mainWhite
   padding-top: 2rem
   margin-top: 1rem
   i
     font-size: 2rem
-    color: #fff
+    color: $mainWhite
