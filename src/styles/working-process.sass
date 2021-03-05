@@ -1,0 +1,68 @@
+.working-process::before
+  content: 'WORKING'!important
+
+.container-fluid
+  padding-right: 15px
+  padding-left: 15px
+  .row
+    margin-right: -15px
+    margin-left: -15px
+    overflow: hidden
+    .left, .right
+      display: block
+      height: 450px
+      margin-bottom: 50px
+      display: flex
+      align-items: center
+      justify-content: center
+      padding: 0 2rem 0 2rem
+      transition: all 1.5s ease
+    .left.hidden
+      opacity: 0
+      transform: translateX(-200px)
+    .right.hidden
+      opacity: 0
+      transform: translateX(200px)
+    .text h3
+      font-size: 30px
+      line-height: 30px
+      text-align: left
+      text-transform: uppercase
+      font-weight: 400
+      opacity: .8
+      margin-top: 10px
+      margin-bottom: 10px
+      padding-top: 10px
+      padding-bottom: 10px
+    .text p
+      color: $mainBlack
+      font-size: 16px
+      line-height: 24px
+      opacity: 1
+
+@media screen and (max-width: 1300px)
+  .working-process::before
+    font-size: 10rem
+    line-height: 8rem
+
+@media screen and (max-width: 700px)
+  .working-process::before
+    font-size: 6rem
+    line-height: 5rem
+    padding-left: 0
+
+@media screen and (max-width: 500px)
+  .working-process::before
+    font-size: 4rem
+    line-height: 3rem
+    padding-left: 0
+
+@media screen and (min-width: 768px)
+  .container-fluid .row
+    .left, .right
+      float: left
+      width: 40%
+    &:nth-child(2)
+      padding-left: 10rem
+    .right
+      margin-top: 60px

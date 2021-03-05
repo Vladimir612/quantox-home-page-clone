@@ -1,6 +1,6 @@
 @import './variables.sass'
 
-.about-company
+.about-company, .working-process
   min-height: 100vh
   position: relative
   margin-left: auto
@@ -16,8 +16,8 @@
     color: rgba(0, 0, 0, 0.1)
     font-weight: bold
     overflow: hidden
-    font-size: 20rem
-    line-height: 14rem
+    font-size: 15rem
+    line-height: 11rem
     margin-left: 0
 
 .move-right
@@ -60,8 +60,8 @@
 
 @media screen and (max-width: 1300px)
   .about-company::before
-    font-size: 15rem
-    line-height: 10rem
+    font-size: 10rem
+    line-height: 8rem
   .home-list
     grid-template-columns: repeat(2, 1fr)
 
@@ -72,9 +72,8 @@
     padding-left: 0
   .home-list
     grid-template-columns: 1fr
-
 @media screen and (max-width: 1000px)
-  .about-company, .quantox-services
+  .about-company, .quantox-services, .working-process
     grid-template-columns: 1fr!important
   .move-right
     grid-column: 1/2
