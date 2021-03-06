@@ -1,0 +1,41 @@
+@import './variables.sass'
+
+.sidebar.fixed
+  width: 22%
+  left: 0
+  background-color: transparent
+  padding: 2rem 0 0 2rem
+  align-items: initial
+  z-index: 1
+  .menu
+    display: flex
+    align-items: flex-start
+    justify-content: center
+    flex-direction: column
+  .menu-link
+    color: $mainBlack
+  .social-media
+    border-color: $mainBlack
+    i
+      color: $mainBlack
+  .translate ul li
+    color: $mainBlack
+    &:nth-child(1)
+      color: darken($mainWhite, 30)
+
+.white
+  color: $mainWhite!important
+  border-color: $mainWhite!important
+  li, i
+    color: $mainWhite!important
+  li:nth-child(1)
+    color: darken($mainWhite, 30)!important
+
+@media screen and (max-width: 1000px)
+  .sidebar.fixed
+    display: none
+
+@media screen and (max-width: 1300px)
+  .sidebar.fixed .translate ul
+    display: grid
+    grid-template-columns: repeat(3, 1fr)
