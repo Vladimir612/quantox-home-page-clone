@@ -8,7 +8,7 @@
   position: fixed
   top: 0
   left: -100vw
-  background-color: $mainBlack
+  background: $mainBlack
   display: flex
   flex-direction: column
   align-items: center
@@ -30,8 +30,6 @@
   position: relative
   text-transform: uppercase
   color: $mainWhite
-  &:hover::before
-    width: 100%
   &::before
     content: attr(data-content) //1% of the cases
     position: absolute
@@ -42,9 +40,10 @@
     overflow: hidden
     white-space: nowrap
     transition: width 0.4s ease-in-out
+  &:hover::before
+    width: 100%
 
 .social-media
-  width: 100%
   display: flex
   justify-content: space-between
   border-top: 2px solid $mainWhite

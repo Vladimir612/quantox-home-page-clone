@@ -17,17 +17,13 @@
   font-size: 14px
   display: flex
   flex-wrap: wrap
-  width: 100%
   margin: 0 auto
   overflow: hidden
   list-style-type: none
-  padding-left: 0
   .hex
     position: relative
-    visibility: hidden
     outline: 1px solid transparent
     transition: all 0.5s
-    backface-visibility: hidden
     will-change: transform
     &::after
       content: ''
@@ -39,16 +35,12 @@
       padding-bottom: 110.851%
       margin: 2%
       overflow: hidden
-      visibility: hidden
       outline: 1px solid transparent
-      -webkit-transform: rotate3d(0, 0, 1, -60deg) skewY(30deg)
-      -ms-transform: rotate3d(0, 0, 1, -60deg) skewY(30deg)
       transform: rotate3d(0, 0, 1, -60deg) skewY(30deg)
       transition: all 0.5s
     .hex-in *
       position: absolute
-      visibility: visible
-      outline: 1px sloid transparent
+      outline: 1px solid transparent
     .hex-link
       display: block
       width: 100%
@@ -56,8 +48,6 @@
       text-align: center
       color: $mainGreen
       overflow: hidden
-      -webkit-transform: skewY(-30deg) rotate3d(0, 0, 1, 60deg)
-      -ms-transform: skewY(-30deg) rotate3d(0, 0, 1, 60deg)
       transform: skewY(-30deg) rotate3d(0, 0, 1, 60deg)
       opacity: 0.4
       transition: 0.23s
@@ -72,9 +62,6 @@
     .align-title
       width: 100%
       height: 100%
-      display: flex
-      align-items: center
-      justify-content: center
     .honeycomb-cell__title
       color: white
       text-transform: uppercase
@@ -84,7 +71,6 @@
       z-index: 1
       align-self: center
     .honeycomb-cell__title, p
-      width: 100%
       padding: 5%
       box-sizing: border-box
       font-size: 18px
@@ -96,7 +82,6 @@
 @media (min-width: 700px)
   .hex-grid
     padding-bottom: 0%
-    font-size: 13px
 
 @media (min-width: 992px)
   .hex-grid
