@@ -1,6 +1,6 @@
 @import './variables.sass'
 
-.about-company, .working-process
+.common-section
   min-height: 100vh
   position: relative
   margin-left: auto
@@ -8,7 +8,6 @@
   display: grid
   grid-template-columns: 1fr 4fr
   &::before
-    content: 'WHY'
     position: absolute
     top: 0
     padding-left: 1rem
@@ -19,6 +18,10 @@
     font-size: 15rem
     line-height: 11rem
     margin-left: 0
+
+.about-company
+  &::before
+    content: 'WHY'
 
 .move-right
   grid-column: 2/3
@@ -79,7 +82,7 @@
     &:nth-last-child(1)
       margin-bottom: 4rem
 @media screen and (max-width: 1000px)
-  .about-company, .quantox-services, .working-process
+  .common-section
     grid-template-columns: 1fr!important
   .move-right
     grid-column: 1/2

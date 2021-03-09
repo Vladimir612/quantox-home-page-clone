@@ -1,15 +1,14 @@
-const toggleMenu = document.querySelector('.menu-wrap')
-const sidebar = document.querySelector('.sidebar')
-
-toggleMenu.onclick = function () {
-  sidebar.classList.toggle('show')
-}
+;(toggleMenu = () => {
+  const toggleMenu = document.querySelector('.menu-wrap')
+  const sidebar = document.querySelector('.sidebar')
+  toggleMenu.onclick = () => sidebar.classList.toggle('show')
+})()
 
 //scrolling
 
-function isVisible(element) {
-  let elementBox = element.getBoundingClientRect()
-  let distanceFromTop = -200
+const isInViewport = (element) => {
+  const elementBox = element.getBoundingClientRect()
+  const distanceFromTop = -200
 
   if (elementBox.top - window.innerHeight < distanceFromTop) {
     return true
@@ -18,22 +17,20 @@ function isVisible(element) {
   }
 }
 
-function scanDocument() {
-  let sectionList = document.querySelectorAll('.hidden')
+const scanDocument = () => {
+  const sectionList = document.querySelectorAll('.toggle-hidden')
   sectionList.forEach((section) => {
-    if (isVisible(section)) {
+    if (isInViewport(section)) {
       section.classList.remove('hidden')
-    }
+    } else section.classList.add('hidden')
   })
 }
 
-document.onscroll = function () {
-  scanDocument()
-}
+document.onscroll = () => scanDocument()
 
 //changing color over different background
 
-window.addEventListener('scroll', function () {
+window.addEventListener('scroll', () => {
   const services = document.querySelector('.quantox-services')
   const translate = document.querySelector('.sidebar.fixed .translate ul')
   const socialMedia = document.querySelector('.sidebar.fixed .social-media')
@@ -54,9 +51,9 @@ window.addEventListener('scroll', function () {
   })
 })
 
-function isOnTopOf(a, b) {
-  let fixedCoord = a.getBoundingClientRect()
-  let bgCoord = b.getBoundingClientRect()
+const isOnTopOf = (a, b) => {
+  const fixedCoord = a.getBoundingClientRect()
+  const bgCoord = b.getBoundingClientRect()
 
   if (
     fixedCoord.top + fixedCoord.height - 10 >= bgCoord.top &&
@@ -64,20 +61,5 @@ function isOnTopOf(a, b) {
   ) {
     return true
   }
-
   return false
-}
-
-//scroll-to-next
-
-const mouse = document.querySelector('.mouse-scroll')
-
-const destinationSection = document.querySelector('body')
-
-function scrollToNextSection() {
-  destinationSection.scrollIntoView({
-    behavior: 'smooth',
-    block: 'end',
-    inline: 'nearest',
-  })
 }
