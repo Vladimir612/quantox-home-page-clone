@@ -1,68 +1,78 @@
-.working-process::before
-  content: 'WORKING'!important
+@import './variables.sass'
+
+.working-process
+  &::before
+    content: 'WORKING'!important
 
 .container-fluid
-  padding-right: 15px
-  padding-left: 15px
+  padding-right: 1rem
+  padding-left: 1rem
   .row
-    margin-right: -15px
-    margin-left: -15px
+    margin-right: -1rem
+    margin-left: -1rem
     overflow: hidden
     .left, .right
-      display: block
-      height: 450px
-      margin-bottom: 50px
+      height: 28rem
+      margin-bottom: 3.125rem
       display: flex
       align-items: center
       justify-content: center
       padding: 0 2rem 0 2rem
       transition: all .7s cubic-bezier(0.3, 0.47, 0.36, 1.2)
-    .left.hidden
-      opacity: 0
-      transform: translateX(-200px)
-    .right.hidden
-      opacity: 0
-      transform: translateX(200px)
-    .text h3
-      font-size: 30px
-      line-height: 30px
+    .left
+      &.hidden
+        opacity: 0
+        transform: translateX(-200px)
+    .right
+      &.hidden
+        opacity: 0
+        transform: translateX(200px)
+    .info-title
+      font-size: 1.875rem
+      line-height: 1.875rem
       text-align: left
       text-transform: uppercase
       font-weight: 400
       opacity: .8
-      margin-top: 10px
-      margin-bottom: 10px
-      padding-top: 10px
-      padding-bottom: 10px
-    .text p
-      color: $mainBlack
-      font-size: 16px
-      line-height: 24px
-      opacity: 1
+      margin-top: 0.625rem
+      margin-bottom: 0.625rem
+      padding-top: 0.625rem
+      padding-bottom: 0.625rem
+    .info-text
+      color: $black
+      font-size: 1rem
+      line-height: 1.5rem
 
 @media screen and (max-width: 1300px)
-  .working-process::before
-    font-size: 10rem
-    line-height: 8rem
+  .working-process
+    &::before
+      font-size: 8rem
+      line-height: 7rem
 
 @media screen and (max-width: 700px)
-  .working-process::before
-    font-size: 6rem
-    line-height: 5rem
-    padding-left: 0
+  .working-process
+    &::before
+      font-size: 6rem
+      line-height: 5rem
+      padding-left: 0
 
 @media screen and (max-width: 500px)
-  .working-process::before
-    font-size: 4rem
-    line-height: 3rem
-    padding-left: 0
+  .working-process
+    &::before
+      font-size: 4rem
+      line-height: 3rem
+      padding-left: 0
 
 @media screen and (min-width: 768px)
-  .container-fluid .row
-    .left, .right
-      float: left
-      width: 40%
-    &:nth-child(2)
-      padding-left: 10rem
-    .right
-      margin-top: 60px
+  .container-fluid
+    .row
+      .left, .right
+        float: left
+        width: 40%
+      &:nth-child(2)
+        padding-left: 10rem
+      .right
+        margin-top: 3.75rem
+      &:nth-child(2)
+        .right
+          margin-left: 3rem

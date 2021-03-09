@@ -2,9 +2,7 @@ const toggleMenu = document.querySelector('.menu-wrap')
 const sidebar = document.querySelector('.sidebar')
 
 toggleMenu.onclick = function () {
-  if (sidebar.classList.contains('show')) {
-    sidebar.classList.remove('show')
-  } else sidebar.classList.add('show')
+  sidebar.classList.toggle('show')
 }
 
 //scrolling
@@ -35,14 +33,12 @@ document.onscroll = function () {
 
 //changing color over different background
 
-const services = document.querySelector('.quantox-services')
-const fixed = document.querySelector('.sidebar.fixed')
-const translate = document.querySelector('.sidebar.fixed .translate ul')
-const socialMedia = document.querySelector('.sidebar.fixed .social-media')
-
-const links = document.querySelectorAll('.menu-link')
-
 window.addEventListener('scroll', function () {
+  const services = document.querySelector('.quantox-services')
+  const translate = document.querySelector('.sidebar.fixed .translate ul')
+  const socialMedia = document.querySelector('.sidebar.fixed .social-media')
+  const links = document.querySelectorAll('.menu-link')
+
   links.forEach((link) => {
     if (isOnTopOf(link, services)) {
       link.classList.add('white')

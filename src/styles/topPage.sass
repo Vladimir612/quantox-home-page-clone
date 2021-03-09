@@ -1,12 +1,10 @@
 @import './variables.sass'
 @import './toggler.sass'
 @import './animations.sass'
-@import './translate.sass'
-@import './sidebar.sass'
 
 .top-page
   height: 100vh
-  background: $mainBlack
+  background: $black
   animation: topPageDown 1s alternate 1 0.5s cubic-bezier(0, 0, 0.29, 1) both
   position: relative
   z-index: 2
@@ -34,14 +32,14 @@
 .mouse
   width: 35%
   height: 40%
-  border: 2px solid $mainWhite
+  border: 2px solid $white
   border-radius: 2rem
   position: relative
   .wheel
     position: absolute
-    width: 4px
-    height: 4px
-    background: $mainWhite
+    width: .25rem
+    height: .25rem
+    background: $white
     border-radius: 50%
     left: 50%
     top: 20%
@@ -50,19 +48,20 @@
 
 //arrows
 
-.arrows > span
-  display: block
-  transform: rotate(45deg)
-  border-right: 2px solid white
-  border-bottom: 2px solid white
-  width: 16px
-  height: 16px
-  margin: 4px 0 -6px 0px
-  animation: arrows 1s alternate infinite linear
-  &:nth-child(2)
-    animation-delay: .2s
-  &:nth-child(3)
-    animation-delay: .4s
+.arrows
+  span
+    display: block
+    transform: rotate(45deg)
+    border-right: 2px solid $white
+    border-bottom: 2px solid $white
+    width: 1rem
+    height: 1rem
+    margin: .25rem 0 -0.375rem 0
+    animation: arrows 1s alternate infinite linear
+    &:nth-child(2)
+      animation-delay: .2s
+    &:nth-child(3)
+      animation-delay: .4s
 
 //typing
 
@@ -71,7 +70,7 @@
   left: 50%
   top: 50%
   transform: translate(-50%, -50%)
-  color: $mainWhite
+  color: $white
   animation: showTyper 1s ease 1s 1 alternate both
 
 .type-word
@@ -85,7 +84,7 @@
 .type-word2
   border-right: 0.1em solid white
   display: inline-flex
-  width: 14ch
+  width: 12ch
   white-space: nowrap
   overflow: hidden
   animation: typing 2s 1s steps(12, end), blink-caret 0.5s 1s step-end infinite alternate
@@ -97,8 +96,9 @@
 @media screen and (max-width: 980px)
   .top-menu
     position: fixed
-    background: $mainBlack
+    background: $black
     width: 100%
     z-index: 999
-  .translate-hide ul
-    display: none
+  .translate-hide
+    .translate-list
+      display: none!important

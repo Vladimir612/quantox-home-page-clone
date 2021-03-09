@@ -8,13 +8,13 @@
   position: fixed
   top: 0
   left: -100vw
-  background: $mainBlack
+  background: $black
   display: flex
   flex-direction: column
   align-items: center
   justify-content: space-between
   padding: 2rem 0
-  transition: transform 1s cubic-bezier(0.16, 0.54, 0, 0.99)
+  transition: transform .5s cubic-bezier(0.07, 0.06, 0.23, 1)
   &.show
     transform: translateX(100vw)
   .menu
@@ -29,26 +29,27 @@
   font-size: 1rem
   position: relative
   text-transform: uppercase
-  color: $mainWhite
+  color: $white
   &::before
-    content: attr(data-content) //1% of the cases
+    content: attr(data-content)
     position: absolute
     top: 0
     left: 0
-    color: $mainGreen
+    color: $green
     width: 0
     overflow: hidden
     white-space: nowrap
     transition: width 0.4s ease-in-out
-  &:hover::before
-    width: 100%
+  &:hover
+    &::before
+      width: 100%
 
 .social-media
   display: flex
   justify-content: space-between
-  border-top: 2px solid $mainWhite
+  border-top: 2px solid $white
   padding-top: 2rem
   margin-top: 1rem
   i
     font-size: 2rem
-    color: $mainWhite
+    color: $white

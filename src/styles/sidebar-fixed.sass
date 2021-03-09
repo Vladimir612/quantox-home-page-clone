@@ -1,41 +1,46 @@
 @import './variables.sass'
 
-.sidebar.fixed
-  width: 22%
-  left: 0
-  background: transparent
-  padding: 2rem 0 0 2rem
-  align-items: initial
-  z-index: 1
-  .menu
-    display: flex
-    align-items: flex-start
-    justify-content: center
-    flex-direction: column
-  .menu-link
-    color: $mainBlack
-  .social-media
-    border-color: $mainBlack
-    i
-      color: $mainBlack
-  .translate ul li
-    color: $mainBlack
-    &:nth-child(1)
-      color: darken($mainWhite, 30)
+.sidebar
+  &.fixed
+    width: 20%
+    left: 0
+    background: transparent
+    padding: 2rem 0 0 1rem
+    align-items: initial
+    z-index: 1
+    .menu
+      display: flex
+      align-items: flex-start
+      justify-content: center
+      flex-direction: column
+    .menu-link
+      color: $black
+    .social-media
+      border-color: $black
+      i
+        color: $black
+    .translate-list-element
+      color: $black
+      &:nth-child(1)
+        color: darken($white, 30)
 
 .white
-  color: $mainWhite!important
-  border-color: $mainWhite!important
+  color: $white!important
+  border-color: $white!important
   li, i
-    color: $mainWhite!important
-  li:nth-child(1)
-    color: darken($mainWhite, 30)!important
+    color: $white!important
+  li
+    &:nth-child(1)
+      color: $light_gray!important
 
 @media screen and (max-width: 1000px)
-  .sidebar.fixed
-    display: none
+  .sidebar
+    &.fixed
+      display: none
 
 @media screen and (max-width: 1300px)
-  .sidebar.fixed .translate ul
-    display: grid
-    grid-template-columns: repeat(3, 1fr)
+  .sidebar
+    &.fixed
+      .translate-list
+        display: grid
+        grid-template-columns: repeat(3, 1fr)
