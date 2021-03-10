@@ -23,6 +23,15 @@
       color: $black
       &:nth-child(1)
         color: darken($white, 30)
+  +phone
+    &.fixed
+      display: none
+  +tablet-small
+    &.fixed
+      display: none
+  +tablet-large
+    &.fixed
+      display: none
 
 .white
   color: $white!important
@@ -32,15 +41,3 @@
   li
     &:nth-child(1)
       color: $light_gray!important
-
-@media screen and (max-width: 1000px)
-  .sidebar
-    &.fixed
-      display: none
-
-@media screen and (max-width: 1300px)
-  .sidebar
-    &.fixed
-      .translate-list
-        display: grid
-        grid-template-columns: repeat(3, 1fr)

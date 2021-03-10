@@ -1,6 +1,7 @@
 @import './variables.sass'
 @import './toggler.sass'
 @import './animations.sass'
+@import './media-queries-mixins'
 
 .top-page
   height: 100vh
@@ -81,6 +82,14 @@
   left: 50%
   transform: translateX(-50%)
 
++phone
+  .type-word
+    white-space: initial
+
++tablet-small
+  .type-word
+    white-space: initial
+
 .type-word2
   border-right: 0.1em solid white
   display: inline-flex
@@ -89,11 +98,7 @@
   overflow: hidden
   animation: typing 2s 1s steps(12, end), blink-caret 0.5s 1s step-end infinite alternate
 
-@media screen and (max-width: 620px)
-  .type-word
-    white-space: initial
-
-@media screen and (max-width: 980px)
+=top-menu-mixin
   .top-menu
     position: fixed
     background: $black
@@ -102,3 +107,12 @@
   .translate-hide
     .translate-list
       display: none!important
+
++phone
+  +top-menu-mixin
+
++tablet-small
+  +top-menu-mixin
+
++tablet-large
+  +top-menu-mixin

@@ -1,4 +1,11 @@
 @import './variables.sass'
+@import './media-queries-mixins.sass'
+
+=make-one-fragment-mixin
+  .common-section
+    grid-template-columns: 1fr!important
+  .move-right
+    grid-column: 1/2
 
 .common-section
   min-height: 100vh
@@ -22,10 +29,24 @@
 .about-company
   &::before
     content: 'WHY'
+  +phone
+    &::before
+      font-size: 6rem
+      line-height: 5rem
+      padding-left: 0
+  +tablet-small
+    &::before
+      font-size: 6rem
+      line-height: 5rem
+      padding-left: 0
+  +tablet-large
+    &::before
+      font-size: 10rem
+      line-height: 8rem
 
 .move-right
   grid-column: 2/3
-  padding-left: 2rem
+  padding-left: 1rem
   .title
     margin: 4rem 0 5rem 0
     &::before
@@ -46,6 +67,27 @@
   grid-template-columns: repeat(3, 1fr)
   grid-gap: 1.5rem
 
++phone
+  .home-list
+    grid-template-columns: 1fr
+  .home-list-element
+    &:nth-last-child(1)
+      margin-bottom: 4rem
+  +make-one-fragment-mixin
+
++tablet-small
+  .home-list
+    grid-template-columns: 1fr
+  .home-list-element
+    &:nth-last-child(1)
+      margin-bottom: 4rem
+  +make-one-fragment-mixin
+
++tablet-large
+  .home-list
+    grid-template-columns: repeat(2, 1fr)
+  +make-one-fragment-mixin
+
 .home-list-element
   padding: 4rem 1rem 2rem 0rem
   font-weight: 400
@@ -61,28 +103,3 @@
     z-index: 9
     position: absolute
     top: 0
-
-@media screen and (max-width: 1300px)
-  .about-company
-    &::before
-      font-size: 10rem
-      line-height: 8rem
-  .home-list
-    grid-template-columns: repeat(2, 1fr)
-
-@media screen and (max-width: 700px)
-  .about-company
-    &::before
-      font-size: 6rem
-      line-height: 5rem
-      padding-left: 0
-  .home-list
-    grid-template-columns: 1fr
-  .home-list-element
-    &:nth-last-child(1)
-      margin-bottom: 4rem
-@media screen and (max-width: 1000px)
-  .common-section
-    grid-template-columns: 1fr!important
-  .move-right
-    grid-column: 1/2

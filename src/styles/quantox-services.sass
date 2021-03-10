@@ -1,4 +1,5 @@
 @import './variables.sass'
+@import './media-queries-mixins.sass'
 
 .quantox-services
   background: $light_black
@@ -77,17 +78,34 @@
       padding: 5%
       box-sizing: border-box
       font-size: 1.125rem
+  +phone
+    .hex
+      width: 50%
+      &:nth-child(3n + 3)
+        margin-left: 25%
+    .hex-link
+      opacity: 1!important
+  +tablet-small
+    .hex
+      width: 50%
+      &:nth-child(3n + 3)
+        margin-left: 25%
+    .hex-link
+      opacity: 1!important
+  +tablet-large
+    .hex
+      width: 33.333%
+      &:nth-child(5n + 4)
+        margin-left: 16.666%
+    .hex
+      &:nth-child(5n + 4)
+        margin-left: 16.666%
 
-@media (max-width: 992px) and (min-width: 601px)
-  .hex
-    &:nth-child(5n + 4)
-      margin-left: 16.666%
-
-@media (min-width: 700px)
++tablet-large
   .hex-grid
     padding-bottom: 0%
 
-@media (min-width: 992px)
++laptop
   .hex-grid
     padding-bottom: 6.5%
     font-size: .75rem
@@ -95,19 +113,3 @@
       width: 25%
       &:nth-child(7n + 5)
         margin-left: 12.5%
-
-@media (max-width: 768px)
-  .hex-link
-    opacity: 1!important
-
-@media (max-width: 600px)
-  .hex
-    width: 50%
-    &:nth-child(3n + 3)
-      margin-left: 25%
-
-@media (max-width: 992px) and (min-width: 601px)
-  .hex
-    width: 33.333%
-    &:nth-child(5n + 4)
-      margin-left: 16.666%
