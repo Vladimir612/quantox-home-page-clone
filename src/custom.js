@@ -9,8 +9,12 @@
 const isInViewport = (element) => {
   const elementBox = element.getBoundingClientRect()
   const distanceFromTop = -200
+  const distanceFromBottom = 200
 
-  if (elementBox.top - window.innerHeight < distanceFromTop) {
+  if (
+    elementBox.top - window.innerHeight < distanceFromTop &&
+    elementBox.bottom > distanceFromBottom
+  ) {
     return true
   } else {
     return false
